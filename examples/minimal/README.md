@@ -25,7 +25,8 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_primary_aws_region"></a> [primary\_aws\_region](#input\_primary\_aws\_region) | AWS region to deploy resources in. | `string` | n/a | yes |
+| <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix for resource names. | `string` | `"dev"` | no |
+| <a name="input_provider_aws_region"></a> [provider\_aws\_region](#input\_provider\_aws\_region) | AWS region to authenticate provider. | `string` | `"us-east-2"` | no |
 
 ## Outputs
 

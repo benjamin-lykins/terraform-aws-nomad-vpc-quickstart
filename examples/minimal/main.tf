@@ -15,17 +15,24 @@ terraform {
 }
 
 provider "aws" {
-  region = var.primary_aws_region
+  region = var.provider_aws_region
 }
 
-variable "primary_aws_region" {
-  description = "AWS region to deploy resources in. "
+variable "provider_aws_region" {
+  description = "AWS region to authenticate provider."
   type        = string
+  default     = "us-east-2"
+}
+
+variable "prefix" {
+  description = "Prefix for resource names."
+  type        = string
+  default     = "dev"
 }
 
 module "nomad_vpc" {
   source     = "../.."
-  aws_region = var.primary_aws_region
+  aws_region = var.provider_aws_region
 }
 
 output "vpc_id" {

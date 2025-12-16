@@ -4,7 +4,20 @@ See examples for usage. And just a heads up, this is not best practice or produc
 
 Think of it as a forkable quickstart.
 
-Check out the examples folder for different ways to use this module. I did set up a multi-region example, if looking to test Nomad cluster federation across regions.
+## Examples
+See the [examples](./examples) directory for usage patterns.
+
+### Minimal Example
+The [minimal example](./examples/minimal) demonstrates the smallest working configuration to deploy a Nomad VPC Quickstart in a single AWS region.
+
+### Single Region Example
+The [single region example](./examples/single_region) demonstrates deploying the Nomad VPC Quickstart in a single AWS region, with user provided configuration.
+
+### Multi Region Example
+The [multi region example](./examples/multi_region) demonstrates deploying the Nomad VPC Quickstart in multiple AWS regions, with user configuration.
+
+### Multi Region Peering Example
+The [multi region peering example](./examples/multi_region_peering) demonstrates deploying the Nomad VPC Quickstart in multiple AWS regions, with automated VPC peering between them. Make sure CIDRs do not overlap across regions if looking to peer VPCs and federate Nomad clusters.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

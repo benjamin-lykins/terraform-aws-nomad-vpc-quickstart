@@ -50,6 +50,21 @@ variable "region_configs" {
   }
 }
 
+variable "vpc_peering" {
+  description = "Map of VPC Peering Configurations"
+  type = map(object({
+    peer_requestor_region = string
+    peer_accepter_region  = string
+  }))
+  default = {
+    "useast_to_uswest" = {
+      peer_requestor_region = "us-east-2"
+      peer_accepter_region  = "us-west-2"
+    }
+  }
+}
+
+
 module "nomad_vpc" {
   for_each = var.region_configs
 
