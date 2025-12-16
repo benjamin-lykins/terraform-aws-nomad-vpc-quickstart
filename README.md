@@ -4,19 +4,7 @@ See examples for usage. And just a heads up, this is not best practice or produc
 
 Think of it as a forkable quickstart.
 
-## Examples
-See the [examples](./examples) directory for usage examples.
-
-### Minimal Example
-A minimal example that creates a VPC with default CIDRs.
-
-This does uses the default values. All that is needed is to specify the AWS region.
-
-### Single Region Example
-An example that creates a VPC in a single region with custom CIDRs.
-
-### Multi Region Example
-An example that creates VPCs in multiple regions with custom CIDRs. This leverages AWS provider version 6.0+ features to only define a single provider and pass the region to the module, versus multiple ali
+Check out the examples folder for different ways to use this module. I did set up a multi-region example, if looking to test Nomad cluster federation across regions.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
