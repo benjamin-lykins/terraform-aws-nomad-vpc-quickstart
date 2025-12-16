@@ -18,13 +18,11 @@ provider "aws" {
   region = var.primary_aws_region
 }
 
-// Using AWS 6.0+ provider features to only define
 variable "primary_aws_region" {
   description = "AWS region to deploy resources in. "
   type        = string
   default     = "us-east-2"
 }
-
 
 variable "region_configs" {
   type = map(object({

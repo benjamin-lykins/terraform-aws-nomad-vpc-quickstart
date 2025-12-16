@@ -141,6 +141,10 @@ resource "aws_route_table_association" "rtbassoc-private" {
   route_table_id = element(aws_route_table.rtb_private.*.id, count.index)
 }
 
+
+// Broken when using AWS provider 6.0++ due to issue
+// https://github.com/hashicorp/terraform-provider-aws/issues/44402
+
 # data "aws_vpc_endpoint_service" "s3_endpoint" {
 #   service         = "s3"
 #   service_type    = "Gateway"
@@ -151,7 +155,9 @@ resource "aws_vpc_endpoint" "s3_endpoint" {
 
   region = var.aws_region
 
-  vpc_id            = aws_vpc.main.id
+  vpc_id = aws_vpc.main.id
+
+  // Using service_name directly due to issue with data source
   service_name      = "com.amazonaws.${var.aws_region}.s3"
   vpc_endpoint_type = "Gateway"
 
