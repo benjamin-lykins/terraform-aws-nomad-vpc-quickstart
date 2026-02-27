@@ -34,6 +34,7 @@ resource "aws_subnet" "public" {
 
   tags = {
     Name = "${var.prefix}-public-${element(data.aws_availability_zones.available.names, count.index)}"
+    Tier = "public"
   }
 }
 
@@ -49,6 +50,7 @@ resource "aws_subnet" "private" {
 
   tags = {
     Name = "${var.prefix}-private-${element(data.aws_availability_zones.available.names, count.index)}"
+    Tier = "private"
   }
 }
 
